@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>MDRNorImgName</key>
+		<string>icon_tab_calllog</string>
+		<key>MDRSelImgName</key>
+		<string>icon_tab_calllog_selected</string>
+		<key>MDRTabbarTitle</key>
+		<string>通话记录</string>
+		<key>MDRRootVcName</key>
+		<string>MDRCalllogController</string>
+	</dict>
+	<dict>
+		<key>MDRNorImgName</key>
+		<string>icon_tab_contact</string>
+		<key>MDRSelImgName</key>
+		<string>icon_tab_contact_selected</string>
+		<key>MDRTabbarTitle</key>
+		<string>联系人</string>
+		<key>MDRRootVcName</key>
+		<string>MDRContactListController</string>
+	</dict>
+	<dict>
+		<key>MDRNorImgName</key>
+		<string>icon_tab_Dial</string>
+		<key>MDRSelImgName</key>
+		<string>icon_tab_Dia_selectedl</string>
+		<key>MDRTabbarTitle</key>
+		<string>拨号</string>
+		<key>MDRRootVcName</key>
+		<string>MDRDialController</string>
+	</dict>
+	<dict>
+		<key>MDRNorImgName</key>
+		<string>icon_tab_setting</string>
+		<key>MDRSelImgName</key>
+		<string>icon_tab_setting_selected</string>
+		<key>MDRTabbarTitle</key>
+		<string>设置</string>
+		<key>MDRRootVcName</key>
+		<string>MDRSettingController</string>
+	</dict>
+</array>
+</plist>
