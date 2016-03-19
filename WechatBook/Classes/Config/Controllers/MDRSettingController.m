@@ -19,11 +19,7 @@
     
     // 1.设置标题
     self.navigationItem.title = @"设置";
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 #pragma mark - Table view data source

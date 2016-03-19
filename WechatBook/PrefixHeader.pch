@@ -9,13 +9,30 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#ifdef __OBJC__
+
 
 #import "UIView+MDRExtension.h"
+
 
 #define MDRThemeColor [UIColor colorWithRed:89/255.0 green:191/255.0 blue:93/255.0 alpha:1.0]
 
 #define MDRRGBColor(R, G, B) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:1.0]
 
+#define MDRRGBAColor(R, G, B, A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
 
+
+
+#ifdef DEBUG
+
+#define MDRLog(...)    NSLog(__VA_ARGS__)
+
+#else
+
+#define MDRLog(...)
+
+#endif
+
+#endif
 
 #endif /* PrefixHeader_pch */

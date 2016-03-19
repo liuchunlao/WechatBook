@@ -10,6 +10,8 @@
 
 @interface MDRContactListController ()
 
+@property (nonatomic, weak) UIBarButtonItem *addContactItem;
+
 @end
 
 @implementation MDRContactListController
@@ -17,16 +19,77 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // 1.标题
+    UISegmentedControl *segmentControl = [[UISegmentedControl alloc] initWithItems:@[@"免费", @"全部"]];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    segmentControl.width = 140;
+    
+    [segmentControl setTitleTextAttributes:@{
+                                            NSForegroundColorAttributeName : [UIColor whiteColor]
+                                            } forState:UIControlStateSelected];
+    
+    [segmentControl setTitleTextAttributes:@{
+                                            NSForegroundColorAttributeName : MDRThemeColor
+                                            } forState:UIControlStateNormal];
+    
+    segmentControl.selectedSegmentIndex = 0;
+    
+    self.navigationItem.titleView = segmentControl;
+    
+    [segmentControl addTarget:self action:@selector(segmentControlValueChanged:) forControlEvents:UIControlEventValueChanged];
+    
+    
+    // 2.左侧按钮
+    UIBarButtonItem *chooseItem = [[UIBarButtonItem alloc] initWithTitle:@"选择" style:UIBarButtonItemStylePlain target:self action:@selector(chooseItemClick:)];
+    self.navigationItem.leftBarButtonItem = chooseItem;
+    
+    // 3.右侧按钮
+    UIBarButtonItem *addContactItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_add_free_freinds"] style:UIBarButtonItemStylePlain target:self action:@selector(addContactItemClick)];
+    self.navigationItem.rightBarButtonItem = addContactItem;
+    
+    self.addContactItem = addContactItem;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - 点击选择调用
+/**
+ 通过代码直接修改barbuttonItem的文字或图片是可能会同时显示两个
+ */
+- (void)chooseItemClick:(UIBarButtonItem *)sender {
+
+    if ([sender.title isEqualToString:@"选择"]) {
+
+        sender.title = @"取消";
+        self.addContactItem.title = @"全选";
+        self.addContactItem.image = nil;
+        
+        
+    } else {
+    
+        sender.title = @"选择";
+        self.addContactItem.title = nil;
+        self.addContactItem.image = [UIImage imageNamed:@"icon_add_free_freinds"];
+
+        
+    }
+
+    
+    
+    
+}
+
+#pragma mark - 点击添加联系人
+- (void)addContactItemClick {
+
+    
+    
+    
+}
+
+#pragma mark - 刷新列表
+- (void)segmentControlValueChanged:(UISegmentedControl *)segment {
+
+    MDRLog(@"刷新联系人信息");
+    
 }
 
 #pragma mark - Table view data source

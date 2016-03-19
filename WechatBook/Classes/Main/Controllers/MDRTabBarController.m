@@ -53,7 +53,7 @@
         // 2.3 创建控制器对象
         UIViewController *vc = [[vcClass alloc] init];
         
-        vc.view.backgroundColor = [UIColor whiteColor];
+//        vc.view.backgroundColor = [UIColor whiteColor];
 
         // 设置文字及图片
         // 2.4 设置标题 及普通状态时的文字颜色

@@ -8,6 +8,25 @@
 
 #import "MDRDialController.h"
 
+@interface MDRYellowButton : UIButton
+
+@end
+
+
+@implementation MDRYellowButton
+
+- (void)layoutSubviews {
+
+    [super layoutSubviews];
+    
+    self.titleLabel.x = 0;
+    self.imageView.x = self.titleLabel.width + 2;
+    
+}
+
+@end
+
+
 @interface MDRDialController ()
 
 @end
@@ -15,7 +34,39 @@
 @implementation MDRDialController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
+    
+#pragma mark - 黄页按钮
+    
+    // 1.按钮
+    MDRYellowButton *yellowBtn = [MDRYellowButton buttonWithType:UIButtonTypeCustom];
+    
+    // 2.文字图片
+    [yellowBtn setTitle:@"黄页" forState:UIControlStateNormal];
+    [yellowBtn setTitleColor:MDRThemeColor forState:UIControlStateNormal];
+    [yellowBtn setImage:[UIImage imageNamed:@"icon_dialArrow"] forState:UIControlStateNormal];
+    
+    // 2.2 自适应大小
+    [yellowBtn sizeToFit];
+    
+    // 3.包成item
+    UIBarButtonItem *pageItem = [[UIBarButtonItem alloc] initWithCustomView:yellowBtn];
+    self.navigationItem.rightBarButtonItem = pageItem;
+    
+    // 4.注册事件
+    [yellowBtn addTarget:self action:@selector(yellowBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    
+//#pragma mark - 导航栏背景透明
+    self.view.backgroundColor = [UIColor blueColor];
+}
+
+#pragma mark - 跳转到黄页控制器
+- (void)yellowBtnClick {
+
+    MDRLog(@"跳转到黄页控制器");
+    
     
 }
 
@@ -26,11 +77,19 @@
 
     [super viewWillAppear:animated];
     
-    // 1.让底部的工具条跟barTintColor与控制器背景一直
+    // 2.修改样式
+    [self.tabBarController.tabBar setBarStyle:UIBarStyleBlackOpaque];
+    // 1.让底部的工具条跟barTintColor与控制器背景一致
     [self.tabBarController.tabBar setBarTintColor:self.view.backgroundColor];
     
-    // 2.修改样式
-    [self.tabBarController.tabBar setBarStyle:UIBarStyleBlack];
+    
+    
+    
+////    [self.navigationController.navigationController.navigationBar setBackgroundColor:[UIColor clearColor]];
+////
+//    // 设置一个没有内容的图片即可
+//    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    
     
 }
 
