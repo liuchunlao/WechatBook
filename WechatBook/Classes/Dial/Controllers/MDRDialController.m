@@ -59,14 +59,13 @@
     [yellowBtn addTarget:self action:@selector(yellowBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
 //#pragma mark - 导航栏背景透明
-    self.view.backgroundColor = [UIColor blueColor];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 #pragma mark - 跳转到黄页控制器
 - (void)yellowBtnClick {
 
     MDRLog(@"跳转到黄页控制器");
-    
     
 }
 
@@ -82,13 +81,25 @@
     // 1.让底部的工具条跟barTintColor与控制器背景一致
     [self.tabBarController.tabBar setBarTintColor:self.view.backgroundColor];
     
+
     
     
+//    [self.navigationController.navigationController.navigationBar setBackgroundColor:MDRRGBAColor(100, 100, 100, 0)];
+//    [self.navigationController.navigationBar.subviews makeObjectsPerformSelector:@selector(setAlpha:) withObject:@0];
     
-////    [self.navigationController.navigationController.navigationBar setBackgroundColor:[UIColor clearColor]];
+    [self.navigationController.navigationBar.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        NSLog(@"%@", obj);
+        
+        if ([obj isKindOfClass:NSClassFromString(@"UINavigationBarBackIndicatorView")]) {
+            obj.backgroundColor = MDRRGBAColor(1, 1, 1, 0);
+        }
+        
+    }];
+
 ////
 //    // 设置一个没有内容的图片即可
-//    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
     
     
 }
