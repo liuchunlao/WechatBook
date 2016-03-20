@@ -68,7 +68,6 @@
         vc.tabBarItem.image = [[UIImage imageNamed:obj[MDRNorImgName]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         vc.tabBarItem.selectedImage = [[UIImage imageNamed:obj[MDRSelImgName]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         
-        
 
         // 包成导航控制器
         // 2.6 包成导航控制器

@@ -1,5 +1,5 @@
 //
-//  MDRSettingController.h
+//  MDRSetHomeHeaderView.h
 //  WechatBook
 //
 //  Created by 刘春牢 on 16/3/20.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MDRSettingController : UITableViewController
+@interface MDRSetHomeHeaderView : UIView
+
++ (instancetype)homeHeaderView;
 
 @end

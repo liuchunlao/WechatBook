@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D91DF2351C9EC94300312331 /* MDRSettingHome.plist in Resources */ = {isa = PBXBuildFile; fileRef = D91DF2341C9EC94300312331 /* MDRSettingHome.plist */; };
+		D91DF2381C9ECD0D00312331 /* MDRSettingBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = D91DF2371C9ECD0D00312331 /* MDRSettingBaseController.m */; };
+		D91DF23B1C9ECE1D00312331 /* MDRSettingHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D91DF23A1C9ECE1D00312331 /* MDRSettingHomeController.m */; };
+		D91DF23E1C9ED60700312331 /* MDRSetHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D91DF23D1C9ED60700312331 /* MDRSetHomeHeaderView.m */; };
+		D91DF2401C9ED61200312331 /* MDRSetHomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91DF23F1C9ED61200312331 /* MDRSetHomeHeaderView.xib */; };
+		D91DF2431C9EDB2700312331 /* MDRAccountInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = D91DF2421C9EDB2700312331 /* MDRAccountInfoController.m */; };
+		D91DF24B1C9EDDE000312331 /* MDRFreeCall.plist in Resources */ = {isa = PBXBuildFile; fileRef = D91DF24A1C9EDDE000312331 /* MDRFreeCall.plist */; };
+		D91DF24D1C9EDF3600312331 /* MDRSystemCall.plist in Resources */ = {isa = PBXBuildFile; fileRef = D91DF24C1C9EDF3600312331 /* MDRSystemCall.plist */; };
 		D93376F11C9DB9B800F3F64E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D93376F01C9DB9B800F3F64E /* main.m */; };
 		D93376FC1C9DB9B800F3F64E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D93376FB1C9DB9B800F3F64E /* Assets.xcassets */; };
 		D93376FF1C9DB9B800F3F64E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D93376FD1C9DB9B800F3F64E /* LaunchScreen.storyboard */; };
@@ -17,7 +25,6 @@
 		D933773D1C9DBE4200F3F64E /* MDRCalllogController.m in Sources */ = {isa = PBXBuildFile; fileRef = D933773C1C9DBE4200F3F64E /* MDRCalllogController.m */; };
 		D93377401C9DBE5A00F3F64E /* MDRContactListController.m in Sources */ = {isa = PBXBuildFile; fileRef = D933773F1C9DBE5A00F3F64E /* MDRContactListController.m */; };
 		D93377431C9DBE7000F3F64E /* MDRDialController.m in Sources */ = {isa = PBXBuildFile; fileRef = D93377421C9DBE7000F3F64E /* MDRDialController.m */; };
-		D93377461C9DBE8900F3F64E /* MDRSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = D93377451C9DBE8900F3F64E /* MDRSettingController.m */; };
 		D93377491C9DCF7B00F3F64E /* MDRCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = D93377481C9DCF7B00F3F64E /* MDRCoverView.m */; };
 		D933774B1C9DD61200F3F64E /* MDRAddPop1.plist in Resources */ = {isa = PBXBuildFile; fileRef = D933774A1C9DD61200F3F64E /* MDRAddPop1.plist */; };
 		D933774F1C9DD7FD00F3F64E /* UIView+MDRExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D933774E1C9DD7FD00F3F64E /* UIView+MDRExtension.m */; };
@@ -26,6 +33,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D91DF2341C9EC94300312331 /* MDRSettingHome.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MDRSettingHome.plist; sourceTree = "<group>"; };
+		D91DF2361C9ECD0D00312331 /* MDRSettingBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRSettingBaseController.h; sourceTree = "<group>"; };
+		D91DF2371C9ECD0D00312331 /* MDRSettingBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRSettingBaseController.m; sourceTree = "<group>"; };
+		D91DF2391C9ECE1D00312331 /* MDRSettingHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRSettingHomeController.h; sourceTree = "<group>"; };
+		D91DF23A1C9ECE1D00312331 /* MDRSettingHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRSettingHomeController.m; sourceTree = "<group>"; };
+		D91DF23C1C9ED60700312331 /* MDRSetHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRSetHomeHeaderView.h; sourceTree = "<group>"; };
+		D91DF23D1C9ED60700312331 /* MDRSetHomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRSetHomeHeaderView.m; sourceTree = "<group>"; };
+		D91DF23F1C9ED61200312331 /* MDRSetHomeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDRSetHomeHeaderView.xib; sourceTree = "<group>"; };
+		D91DF2411C9EDB2700312331 /* MDRAccountInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRAccountInfoController.h; sourceTree = "<group>"; };
+		D91DF2421C9EDB2700312331 /* MDRAccountInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRAccountInfoController.m; sourceTree = "<group>"; };
+		D91DF24A1C9EDDE000312331 /* MDRFreeCall.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MDRFreeCall.plist; sourceTree = "<group>"; };
+		D91DF24C1C9EDF3600312331 /* MDRSystemCall.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MDRSystemCall.plist; sourceTree = "<group>"; };
 		D93376EC1C9DB9B800F3F64E /* WechatBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WechatBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93376F01C9DB9B800F3F64E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D93376FB1C9DB9B800F3F64E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,8 +64,6 @@
 		D933773F1C9DBE5A00F3F64E /* MDRContactListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRContactListController.m; sourceTree = "<group>"; };
 		D93377411C9DBE7000F3F64E /* MDRDialController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRDialController.h; sourceTree = "<group>"; };
 		D93377421C9DBE7000F3F64E /* MDRDialController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRDialController.m; sourceTree = "<group>"; };
-		D93377441C9DBE8900F3F64E /* MDRSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRSettingController.h; sourceTree = "<group>"; };
-		D93377451C9DBE8900F3F64E /* MDRSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRSettingController.m; sourceTree = "<group>"; };
 		D93377471C9DCF7B00F3F64E /* MDRCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRCoverView.h; sourceTree = "<group>"; };
 		D93377481C9DCF7B00F3F64E /* MDRCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRCoverView.m; sourceTree = "<group>"; };
 		D933774A1C9DD61200F3F64E /* MDRAddPop1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MDRAddPop1.plist; sourceTree = "<group>"; };
@@ -69,6 +86,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D91DF2331C9EC8D100312331 /* MDRSettings */ = {
+			isa = PBXGroup;
+			children = (
+				D91DF2341C9EC94300312331 /* MDRSettingHome.plist */,
+				D91DF24A1C9EDDE000312331 /* MDRFreeCall.plist */,
+				D91DF24C1C9EDF3600312331 /* MDRSystemCall.plist */,
+			);
+			path = MDRSettings;
+			sourceTree = "<group>";
+		};
 		D93376E31C9DB9B800F3F64E = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +124,7 @@
 		D93376EF1C9DB9B800F3F64E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D91DF2331C9EC8D100312331 /* MDRSettings */,
 				D93376F01C9DB9B800F3F64E /* main.m */,
 				D93376FB1C9DB9B800F3F64E /* Assets.xcassets */,
 				D93376FD1C9DB9B800F3F64E /* LaunchScreen.storyboard */,
@@ -136,8 +164,12 @@
 		D93377081C9DBA7800F3F64E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D93377441C9DBE8900F3F64E /* MDRSettingController.h */,
-				D93377451C9DBE8900F3F64E /* MDRSettingController.m */,
+				D91DF2361C9ECD0D00312331 /* MDRSettingBaseController.h */,
+				D91DF2371C9ECD0D00312331 /* MDRSettingBaseController.m */,
+				D91DF2391C9ECE1D00312331 /* MDRSettingHomeController.h */,
+				D91DF23A1C9ECE1D00312331 /* MDRSettingHomeController.m */,
+				D91DF2411C9EDB2700312331 /* MDRAccountInfoController.h */,
+				D91DF2421C9EDB2700312331 /* MDRAccountInfoController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -198,6 +230,9 @@
 		D93377101C9DBA7800F3F64E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D91DF23C1C9ED60700312331 /* MDRSetHomeHeaderView.h */,
+				D91DF23D1C9ED60700312331 /* MDRSetHomeHeaderView.m */,
+				D91DF23F1C9ED61200312331 /* MDRSetHomeHeaderView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -524,8 +559,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D91DF2351C9EC94300312331 /* MDRSettingHome.plist in Resources */,
+				D91DF24D1C9EDF3600312331 /* MDRSystemCall.plist in Resources */,
 				D93376FF1C9DB9B800F3F64E /* LaunchScreen.storyboard in Resources */,
 				D93376FC1C9DB9B800F3F64E /* Assets.xcassets in Resources */,
+				D91DF24B1C9EDDE000312331 /* MDRFreeCall.plist in Resources */,
+				D91DF2401C9ED61200312331 /* MDRSetHomeHeaderView.xib in Resources */,
 				D933774B1C9DD61200F3F64E /* MDRAddPop1.plist in Resources */,
 				D933773A1C9DBD0500F3F64E /* MDRTabBarVcs.plist in Resources */,
 			);
@@ -539,17 +578,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				D933774F1C9DD7FD00F3F64E /* UIView+MDRExtension.m in Sources */,
+				D91DF23E1C9ED60700312331 /* MDRSetHomeHeaderView.m in Sources */,
 				D93377491C9DCF7B00F3F64E /* MDRCoverView.m in Sources */,
 				D93377401C9DBE5A00F3F64E /* MDRContactListController.m in Sources */,
 				D93377351C9DBC8F00F3F64E /* MDRTabBarController.m in Sources */,
 				D93376F11C9DB9B800F3F64E /* main.m in Sources */,
 				D933773D1C9DBE4200F3F64E /* MDRCalllogController.m in Sources */,
 				D93377431C9DBE7000F3F64E /* MDRDialController.m in Sources */,
+				D91DF2381C9ECD0D00312331 /* MDRSettingBaseController.m in Sources */,
 				D93377551C9DDED400F3F64E /* MDRPlayController.m in Sources */,
 				D93377311C9DBA7800F3F64E /* AppDelegate.m in Sources */,
+				D91DF23B1C9ECE1D00312331 /* MDRSettingHomeController.m in Sources */,
 				D93377521C9DDEA100F3F64E /* MDRSelectContactController.m in Sources */,
-				D93377461C9DBE8900F3F64E /* MDRSettingController.m in Sources */,
 				D93377381C9DBCAF00F3F64E /* MDRNavigationController.m in Sources */,
+				D91DF2431C9EDB2700312331 /* MDRAccountInfoController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

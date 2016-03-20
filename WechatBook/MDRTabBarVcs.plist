@@ -40,7 +40,7 @@
 		<key>MDRTabbarTitle</key>
 		<string>设置</string>
 		<key>MDRRootVcName</key>
-		<string>MDRSettingController</string>
+		<string>MDRSettingHomeController</string>
 	</dict>
 </array>
 </plist>

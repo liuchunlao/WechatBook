@@ -80,10 +80,10 @@
 
     [super viewWillAppear:animated];
     
-    // 2.修改样式
-    [self.tabBarController.tabBar setBarStyle:UIBarStyleBlackOpaque];
     // 1.让底部的工具条跟barTintColor与控制器背景一致
     [self.tabBarController.tabBar setBarTintColor:self.view.backgroundColor];
+    // 2.修改样式
+    [self.tabBarController.tabBar setBarStyle:UIBarStyleBlackOpaque];
     
     
 }

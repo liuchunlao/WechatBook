@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>MDRHeader</key>
+		<string></string>
+		<key>MDRFooter</key>
+		<string></string>
+		<key>MDRItems</key>
+		<array>
+			<dict>
+				<key>MDRTitle</key>
+				<string>IP拨号</string>
+				<key>MDRAccessoryType</key>
+				<string>UIImageView</string>
+				<key>MDRAccessoryName</key>
+				<string>icon_fakeDisclosure</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>MDRHeader</key>
+		<string></string>
+		<key>MDRFooter</key>
+		<string></string>
+		<key>MDRItems</key>
+		<array>
+			<dict>
+				<key>MDRTitle</key>
+				<string>联系人显示号码与归属地</string>
+				<key>MDRAccessoryType</key>
+				<string>UISwitch</string>
+			</dict>
+			<dict>
+				<key>MDRTitle</key>
+				<string>拨通电话后震动提示</string>
+				<key>MDRAccessoryType</key>
+				<string>UISwitch</string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>
