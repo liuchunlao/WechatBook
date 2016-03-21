@@ -34,6 +34,15 @@
     
     
 #pragma mark - 访问通讯录授权
+    [self checkAddressBookAccess];
+       
+
+    return YES;
+}
+
+
+- (void)checkAddressBookAccess {
+    
     // 1.创建通讯录对象
     CNContactStore *store = [[CNContactStore alloc] init];
     
@@ -60,7 +69,7 @@
                     MDRLog(@"授权成功");
                     
                 } else {
-                
+                    
                     MDRLog(@"授权错误信息=>%@", error);
                 }
             }];
@@ -73,9 +82,7 @@
         default:
             break;
     }
-    
 
-    return YES;
 }
 
 
