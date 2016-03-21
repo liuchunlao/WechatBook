@@ -7,10 +7,14 @@
 //
 
 #import "MDRContactListController.h"
+#import <Contacts/CNContact+Predicates.h>
+#import "MDRNavigationController.h"
 
-@interface MDRContactListController ()
+@interface MDRContactListController () <CNContactViewControllerDelegate>
 
 @property (nonatomic, weak) UIBarButtonItem *addContactItem;
+
+@property (nonatomic, strong) NSArray *allPeoples;
 
 @end
 
@@ -32,7 +36,7 @@
                                             NSForegroundColorAttributeName : MDRThemeColor
                                             } forState:UIControlStateNormal];
     
-    segmentControl.selectedSegmentIndex = 0;
+    segmentControl.selectedSegmentIndex = 1;
     
     self.navigationItem.titleView = segmentControl;
     
@@ -48,6 +52,8 @@
     self.navigationItem.rightBarButtonItem = addContactItem;
     
     self.addContactItem = addContactItem;
+    
+    MDRLog(@"%@", self.allPeoples);
 }
 
 #pragma mark - 点击选择调用
@@ -77,14 +83,6 @@
     
 }
 
-#pragma mark - 点击添加联系人
-- (void)addContactItemClick {
-
-    
-    
-    
-}
-
 #pragma mark - 刷新列表
 - (void)segmentControlValueChanged:(UISegmentedControl *)segment {
 
@@ -95,67 +93,64 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
+
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
+
     return 0;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+
+
+
+
+
+
+
+#pragma mark - 点击添加联系人
+- (void)addContactItemClick {
     
-    // Configure the cell...
+    MDRLog(@"添加联系人");
+    // 1.创建控制器
+    CNContactViewController *addContactVc = [CNContactViewController viewControllerForNewContact:[[CNContact alloc] init]];
     
-    return cell;
+    
+    addContactVc.delegate = self;
+    
+    // 2.包成导航控制器
+    MDRNavigationController *nav = [[MDRNavigationController alloc] initWithRootViewController:addContactVc];
+    
+    // 3.显示控制器
+    [self presentViewController:nav animated:YES completion:nil];
+    
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+#pragma mark - CNContactViewControllerDelegate
+- (void)contactViewController:(CNContactViewController *)viewController didCompleteWithContact:(nullable CNContact *)contact {
+
+    // 销毁控制器
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+
+#pragma mark - 懒加载
+- (NSArray *)allPeoples {
+    if (!_allPeoples) {
+        
+        // 1.创建通讯录对象
+//        CNContactStore *store = [[CNContactStore alloc] init];
+//        
+//        // 2.获取所有的联系人数据
+//        NSPredicate *dicate = [CNContact predicateForContactsInGroupWithIdentifier:nil];
+//        
+//        _allPeoples = [store unifiedContactsMatchingPredicate:nil keysToFetch:@[] error:nil];
+//        
+//        MDRLog(@"%@", @(_allPeoples.count));
+    }
+    return _allPeoples;
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -12,8 +12,10 @@
 #ifdef __OBJC__
 
 
-#import "UIView+MDRExtension.h"
+#import <Contacts/Contacts.h>
+#import <ContactsUI/ContactsUI.h>
 
+#import "UIView+MDRExtension.h"
 
 #define MDRThemeColor [UIColor colorWithRed:89/255.0 green:191/255.0 blue:93/255.0 alpha:1.0]
 
