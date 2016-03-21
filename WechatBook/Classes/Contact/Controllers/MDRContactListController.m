@@ -106,9 +106,6 @@
 
 
 
-
-
-
 #pragma mark - 点击添加联系人
 - (void)addContactItemClick {
     
@@ -116,8 +113,11 @@
     // 1.创建控制器
     CNContactViewController *addContactVc = [CNContactViewController viewControllerForNewContact:[[CNContact alloc] init]];
     
-    
+    // 1.2 设置代理
     addContactVc.delegate = self;
+    
+    // 1.3 设置标题
+    addContactVc.navigationItem.title = @"新建联系人";
     
     // 2.包成导航控制器
     MDRNavigationController *nav = [[MDRNavigationController alloc] initWithRootViewController:addContactVc];
