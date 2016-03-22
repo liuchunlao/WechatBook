@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>MDRHeader</key>
+		<string></string>
+		<key>MDRFooter</key>
+		<string></string>
+		<key>MDRItems</key>
+		<array>
+			<dict>
+				<key>MDRTitle</key>
+				<string>通话距离分析</string>
+				<key>MDRAccessoryType</key>
+				<string>UIImageView</string>
+				<key>MDRAccessoryName</key>
+				<string>icon_fakeDisclosure</string>
+			</dict>
+			<dict>
+				<key>MDRTitle</key>
+				<string>玩转电话本</string>
+				<key>MDRAccessoryType</key>
+				<string>UIImageView</string>
+				<key>MDRAccessoryName</key>
+				<string>icon_fakeDisclosure</string>
+			</dict>
+			<dict>
+				<key>MDRTitle</key>
+				<string>意见反馈</string>
+				<key>MDRAccessoryType</key>
+				<string>UIImageView</string>
+				<key>MDRAccessoryName</key>
+				<string>icon_fakeDisclosure</string>
+			</dict>
+			<dict>
+				<key>MDRTitle</key>
+				<string>用户协议</string>
+				<key>MDRAccessoryType</key>
+				<string>UIImageView</string>
+				<key>MDRAccessoryName</key>
+				<string>icon_fakeDisclosure</string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>

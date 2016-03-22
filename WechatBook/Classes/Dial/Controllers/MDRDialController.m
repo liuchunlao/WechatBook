@@ -85,7 +85,7 @@
     // 2.修改样式
     [self.tabBarController.tabBar setBarStyle:UIBarStyleBlackOpaque];
     
-    
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

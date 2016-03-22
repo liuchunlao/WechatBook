@@ -33,7 +33,6 @@
 
     if (self.viewControllers.count > 0) {
         viewController.hidesBottomBarWhenPushed = YES;
-        viewController.view.backgroundColor = [UIColor whiteColor];
     }
     [super pushViewController:viewController animated:animated];
 }

@@ -126,6 +126,10 @@
 				<string>UIImageView</string>
 				<key>MDRAccessoryName</key>
 				<string>icon_fakeDisclosure</string>
+				<key>MDRTargetVc</key>
+				<string>MDRAboutController</string>
+				<key>MDRPlistName</key>
+				<string>MDRSettingAbout</string>
 			</dict>
 		</array>
 	</dict>
