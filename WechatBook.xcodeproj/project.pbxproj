@@ -15,6 +15,7 @@
 		D91DF2431C9EDB2700312331 /* MDRAccountInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = D91DF2421C9EDB2700312331 /* MDRAccountInfoController.m */; };
 		D91DF24B1C9EDDE000312331 /* MDRFreeCall.plist in Resources */ = {isa = PBXBuildFile; fileRef = D91DF24A1C9EDDE000312331 /* MDRFreeCall.plist */; };
 		D91DF24D1C9EDF3600312331 /* MDRSystemCall.plist in Resources */ = {isa = PBXBuildFile; fileRef = D91DF24C1C9EDF3600312331 /* MDRSystemCall.plist */; };
+		D92B1B1E1CA1831D00470594 /* MDRSettingBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D92B1B1D1CA1831D00470594 /* MDRSettingBaseCell.m */; };
 		D93376F11C9DB9B800F3F64E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D93376F01C9DB9B800F3F64E /* main.m */; };
 		D93376FC1C9DB9B800F3F64E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D93376FB1C9DB9B800F3F64E /* Assets.xcassets */; };
 		D93376FF1C9DB9B800F3F64E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D93376FD1C9DB9B800F3F64E /* LaunchScreen.storyboard */; };
@@ -50,6 +51,8 @@
 		D91DF2421C9EDB2700312331 /* MDRAccountInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRAccountInfoController.m; sourceTree = "<group>"; };
 		D91DF24A1C9EDDE000312331 /* MDRFreeCall.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MDRFreeCall.plist; sourceTree = "<group>"; };
 		D91DF24C1C9EDF3600312331 /* MDRSystemCall.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MDRSystemCall.plist; sourceTree = "<group>"; };
+		D92B1B1C1CA1831D00470594 /* MDRSettingBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRSettingBaseCell.h; sourceTree = "<group>"; };
+		D92B1B1D1CA1831D00470594 /* MDRSettingBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRSettingBaseCell.m; sourceTree = "<group>"; };
 		D93376EC1C9DB9B800F3F64E /* WechatBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WechatBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93376F01C9DB9B800F3F64E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D93376FB1C9DB9B800F3F64E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -252,6 +255,8 @@
 				D9E76CDB1CA14114008CA2E4 /* MDRAboutHeaderView.m */,
 				D9E76CDD1CA14121008CA2E4 /* MDRAboutHeaderView.xib */,
 				D9E76CDF1CA146AF008CA2E4 /* MDRAboutFooterView.xib */,
+				D92B1B1C1CA1831D00470594 /* MDRSettingBaseCell.h */,
+				D92B1B1D1CA1831D00470594 /* MDRSettingBaseCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -614,6 +619,7 @@
 				D91DF23B1C9ECE1D00312331 /* MDRSettingHomeController.m in Sources */,
 				D93377521C9DDEA100F3F64E /* MDRSelectContactController.m in Sources */,
 				D93377381C9DBCAF00F3F64E /* MDRNavigationController.m in Sources */,
+				D92B1B1E1CA1831D00470594 /* MDRSettingBaseCell.m in Sources */,
 				D9E76CDC1CA14114008CA2E4 /* MDRAboutHeaderView.m in Sources */,
 				D91DF2431C9EDB2700312331 /* MDRAccountInfoController.m in Sources */,
 			);

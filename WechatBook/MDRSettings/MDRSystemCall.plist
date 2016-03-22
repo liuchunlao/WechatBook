@@ -23,7 +23,7 @@
 		<key>MDRHeader</key>
 		<string></string>
 		<key>MDRFooter</key>
-		<string></string>
+		<string>使用此功能需要在系统-设置-声音，开启振动</string>
 		<key>MDRItems</key>
 		<array>
 			<dict>

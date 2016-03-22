@@ -7,6 +7,8 @@
 //
 
 #import "MDRSettingBaseController.h"
+#import "MDRSettingBaseCell.h"
+
 
 @interface MDRSettingBaseController ()
 
@@ -40,12 +42,12 @@
     // 2.1 组
     NSDictionary *group = self.groupArr[indexPath.section];
     // 2.2 行
-    NSDictionary *item = group[@"MDRItems"][indexPath.row];
+    NSDictionary *item = group[MDRItems][indexPath.row];
     
     
     // 3.跳转到目标控制器
     // 3.1 去字符串
-    NSString *targetVcStr = item[@"MDRTargetVc"];
+    NSString *targetVcStr = item[MDRTargetVc];
     if (targetVcStr.length <= 0) {
         return;
     }
@@ -54,7 +56,7 @@
     // 3.3 创建对象
     UIViewController *vc = [[className alloc] init];
     // 3.4 设置标题
-    vc.navigationItem.title = item[@"MDRTitle"];
+    vc.navigationItem.title = item[MDRTitle];
     
     
     // 4.跳转
@@ -65,7 +67,7 @@
         MDRSettingBaseController *settingVc = (MDRSettingBaseController *)vc;
         
         // 2.设置加载文件名称
-        settingVc.plistName = item[@"MDRPlistName"];
+        settingVc.plistName = item[MDRPlistName];
         // 3.跳转
         [self.navigationController pushViewController:settingVc animated:YES];
     } else {
@@ -77,9 +79,14 @@
     
 }
 
-// 调整组与组之间的间距
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 8;
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    return self.groupArr[section][MDRHeader];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+    
+    return self.groupArr[section][MDRFooter];
 }
 
 
@@ -95,61 +102,21 @@
     NSDictionary *group = self.groupArr[section];
     
     // 2.组内行数
-    return [group[@"MDRItems"] count];
+    return [group[MDRItems] count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     // 1.创建cell
-    static NSString *ID = @"cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-    }
+    MDRSettingBaseCell *cell = [MDRSettingBaseCell cellWithTableView:tableView];
 
     // 2.设置数据
-    NSArray *items = self.groupArr[indexPath.section][@"MDRItems"];
+    // 2.1 取出每行的数据
+    NSArray *items = self.groupArr[indexPath.section][MDRItems];
     NSDictionary *item = items[indexPath.row];
-    
-    // 2.1 设置图片
-    if ([item[@"MDRIcon"] length] > 0) {
-        cell.imageView.image = [UIImage imageNamed:item[@"MDRIcon"]];
-    }
-    
-    // 2.2 设置标题
-    cell.textLabel.text = item[@"MDRTitle"];
-    
-    // 2.3 设置指示器
-    // 1. 获取字符串
-    NSString *accessoryStr = item[@"MDRAccessoryType"];
-    // 2.转为OC的类
-    if (accessoryStr.length == 0) {
-        return cell;
-    }
-    Class className = NSClassFromString(accessoryStr);
-    // 3.创建对象
-    id obj = [[className alloc] init];
-    
-    // 4.判断
-    if ([obj isKindOfClass:[UIImageView class]]) {
-        UIImageView *imgView = (UIImageView *)obj;
-        
-        imgView.image = [UIImage imageNamed:item[@"MDRAccessoryName"]];
-        [imgView sizeToFit];
-        
-        cell.accessoryView = imgView;
-    }
-    
-    if ([obj isKindOfClass:[UISwitch class]]) {
-
-        UISwitch *switcher = (UISwitch *)obj;
-        
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.accessoryView = switcher;
-    }
+    // 2.2 设置给cell
+    cell.item = item;
     
     
     // 3.返回cell
