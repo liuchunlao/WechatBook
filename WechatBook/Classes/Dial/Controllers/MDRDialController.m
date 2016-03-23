@@ -7,6 +7,7 @@
 //
 
 #import "MDRDialController.h"
+#import "MDRDialView.h"
 
 @interface MDRYellowButton : UIButton
 
@@ -33,11 +34,21 @@
 
 @implementation MDRDialController
 
+#pragma mark - 使用dialView替换掉控制器的view
+- (void)loadView {
+
+    self.view = [[MDRDialView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+
+}
+
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    MDRLog(@"%@", self.view);
     
 #pragma mark - 黄页按钮
     

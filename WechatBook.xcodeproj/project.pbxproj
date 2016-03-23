@@ -31,6 +31,10 @@
 		D933774F1C9DD7FD00F3F64E /* UIView+MDRExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D933774E1C9DD7FD00F3F64E /* UIView+MDRExtension.m */; };
 		D93377521C9DDEA100F3F64E /* MDRSelectContactController.m in Sources */ = {isa = PBXBuildFile; fileRef = D93377511C9DDEA100F3F64E /* MDRSelectContactController.m */; };
 		D93377551C9DDED400F3F64E /* MDRPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = D93377541C9DDED400F3F64E /* MDRPlayController.m */; };
+		D961EF6F1CA2EEDF0095766A /* MDRDialView.m in Sources */ = {isa = PBXBuildFile; fileRef = D961EF6E1CA2EEDF0095766A /* MDRDialView.m */; };
+		D961EF721CA2F5700095766A /* MDRNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = D961EF711CA2F5700095766A /* MDRNumberView.m */; };
+		D961EF751CA2FBD50095766A /* MDRNumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D961EF741CA2FBD50095766A /* MDRNumberButton.m */; };
+		D961EF771CA2FBF60095766A /* MDRNumberButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D961EF761CA2FBF60095766A /* MDRNumberButton.xib */; };
 		D9E76CD71CA13FC1008CA2E4 /* MDRAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E76CD61CA13FC1008CA2E4 /* MDRAboutController.m */; };
 		D9E76CD91CA1401A008CA2E4 /* MDRSettingAbout.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9E76CD81CA1401A008CA2E4 /* MDRSettingAbout.plist */; };
 		D9E76CDC1CA14114008CA2E4 /* MDRAboutHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E76CDB1CA14114008CA2E4 /* MDRAboutHeaderView.m */; };
@@ -81,6 +85,13 @@
 		D93377511C9DDEA100F3F64E /* MDRSelectContactController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRSelectContactController.m; sourceTree = "<group>"; };
 		D93377531C9DDED400F3F64E /* MDRPlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRPlayController.h; sourceTree = "<group>"; };
 		D93377541C9DDED400F3F64E /* MDRPlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRPlayController.m; sourceTree = "<group>"; };
+		D961EF6D1CA2EEDF0095766A /* MDRDialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRDialView.h; sourceTree = "<group>"; };
+		D961EF6E1CA2EEDF0095766A /* MDRDialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRDialView.m; sourceTree = "<group>"; };
+		D961EF701CA2F5700095766A /* MDRNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRNumberView.h; sourceTree = "<group>"; };
+		D961EF711CA2F5700095766A /* MDRNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRNumberView.m; sourceTree = "<group>"; };
+		D961EF731CA2FBD50095766A /* MDRNumberButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRNumberButton.h; sourceTree = "<group>"; };
+		D961EF741CA2FBD50095766A /* MDRNumberButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRNumberButton.m; sourceTree = "<group>"; };
+		D961EF761CA2FBF60095766A /* MDRNumberButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDRNumberButton.xib; sourceTree = "<group>"; };
 		D9E76CD51CA13FC1008CA2E4 /* MDRAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRAboutController.h; sourceTree = "<group>"; };
 		D9E76CD61CA13FC1008CA2E4 /* MDRAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRAboutController.m; sourceTree = "<group>"; };
 		D9E76CD81CA1401A008CA2E4 /* MDRSettingAbout.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MDRSettingAbout.plist; sourceTree = "<group>"; };
@@ -339,6 +350,13 @@
 		D933771A1C9DBA7800F3F64E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D961EF6D1CA2EEDF0095766A /* MDRDialView.h */,
+				D961EF6E1CA2EEDF0095766A /* MDRDialView.m */,
+				D961EF701CA2F5700095766A /* MDRNumberView.h */,
+				D961EF711CA2F5700095766A /* MDRNumberView.m */,
+				D961EF731CA2FBD50095766A /* MDRNumberButton.h */,
+				D961EF741CA2FBD50095766A /* MDRNumberButton.m */,
+				D961EF761CA2FBF60095766A /* MDRNumberButton.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -583,6 +601,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D961EF771CA2FBF60095766A /* MDRNumberButton.xib in Resources */,
 				D91DF2351C9EC94300312331 /* MDRSettingHome.plist in Resources */,
 				D9E76CDE1CA14121008CA2E4 /* MDRAboutHeaderView.xib in Resources */,
 				D91DF24D1C9EDF3600312331 /* MDRSystemCall.plist in Resources */,
@@ -606,12 +625,15 @@
 			files = (
 				D933774F1C9DD7FD00F3F64E /* UIView+MDRExtension.m in Sources */,
 				D9E76CD71CA13FC1008CA2E4 /* MDRAboutController.m in Sources */,
+				D961EF6F1CA2EEDF0095766A /* MDRDialView.m in Sources */,
 				D91DF23E1C9ED60700312331 /* MDRSetHomeHeaderView.m in Sources */,
 				D93377491C9DCF7B00F3F64E /* MDRCoverView.m in Sources */,
+				D961EF721CA2F5700095766A /* MDRNumberView.m in Sources */,
 				D93377401C9DBE5A00F3F64E /* MDRContactListController.m in Sources */,
 				D93377351C9DBC8F00F3F64E /* MDRTabBarController.m in Sources */,
 				D93376F11C9DB9B800F3F64E /* main.m in Sources */,
 				D933773D1C9DBE4200F3F64E /* MDRCalllogController.m in Sources */,
+				D961EF751CA2FBD50095766A /* MDRNumberButton.m in Sources */,
 				D93377431C9DBE7000F3F64E /* MDRDialController.m in Sources */,
 				D91DF2381C9ECD0D00312331 /* MDRSettingBaseController.m in Sources */,
 				D93377551C9DDED400F3F64E /* MDRPlayController.m in Sources */,
