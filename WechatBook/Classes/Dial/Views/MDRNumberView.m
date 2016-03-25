@@ -85,6 +85,10 @@
             
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
             
+            // +、delete 默认是隐藏的
+            btn.hidden = YES;
+            
+            
             [btn setImage:self.addDeleteImgArr[i] forState:UIControlStateNormal];
             
             [self addSubview:btn];
