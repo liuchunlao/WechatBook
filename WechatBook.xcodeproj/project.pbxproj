@@ -35,6 +35,7 @@
 		D961EF721CA2F5700095766A /* MDRNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = D961EF711CA2F5700095766A /* MDRNumberView.m */; };
 		D961EF751CA2FBD50095766A /* MDRNumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D961EF741CA2FBD50095766A /* MDRNumberButton.m */; };
 		D961EF771CA2FBF60095766A /* MDRNumberButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D961EF761CA2FBF60095766A /* MDRNumberButton.xib */; };
+		D9813EE21CA6EC3E0013AE57 /* MDRTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D9813EE11CA6EC3E0013AE57 /* MDRTool.m */; };
 		D9E76CD71CA13FC1008CA2E4 /* MDRAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E76CD61CA13FC1008CA2E4 /* MDRAboutController.m */; };
 		D9E76CD91CA1401A008CA2E4 /* MDRSettingAbout.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9E76CD81CA1401A008CA2E4 /* MDRSettingAbout.plist */; };
 		D9E76CDC1CA14114008CA2E4 /* MDRAboutHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E76CDB1CA14114008CA2E4 /* MDRAboutHeaderView.m */; };
@@ -92,6 +93,8 @@
 		D961EF731CA2FBD50095766A /* MDRNumberButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRNumberButton.h; sourceTree = "<group>"; };
 		D961EF741CA2FBD50095766A /* MDRNumberButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRNumberButton.m; sourceTree = "<group>"; };
 		D961EF761CA2FBF60095766A /* MDRNumberButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDRNumberButton.xib; sourceTree = "<group>"; };
+		D9813EE01CA6EC3E0013AE57 /* MDRTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRTool.h; sourceTree = "<group>"; };
+		D9813EE11CA6EC3E0013AE57 /* MDRTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRTool.m; sourceTree = "<group>"; };
 		D9E76CD51CA13FC1008CA2E4 /* MDRAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRAboutController.h; sourceTree = "<group>"; };
 		D9E76CD61CA13FC1008CA2E4 /* MDRAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRAboutController.m; sourceTree = "<group>"; };
 		D9E76CD81CA1401A008CA2E4 /* MDRSettingAbout.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MDRSettingAbout.plist; sourceTree = "<group>"; };
@@ -403,6 +406,7 @@
 		D93377201C9DBA7800F3F64E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				D9813EDF1CA6EC320013AE57 /* Tool */,
 				D933774C1C9DD7E200F3F64E /* Category */,
 				D93377211C9DBA7800F3F64E /* Controllers */,
 				D93377221C9DBA7800F3F64E /* Models */,
@@ -542,6 +546,15 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		D9813EDF1CA6EC320013AE57 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				D9813EE01CA6EC3E0013AE57 /* MDRTool.h */,
+				D9813EE11CA6EC3E0013AE57 /* MDRTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -634,6 +647,7 @@
 				D93376F11C9DB9B800F3F64E /* main.m in Sources */,
 				D933773D1C9DBE4200F3F64E /* MDRCalllogController.m in Sources */,
 				D961EF751CA2FBD50095766A /* MDRNumberButton.m in Sources */,
+				D9813EE21CA6EC3E0013AE57 /* MDRTool.m in Sources */,
 				D93377431C9DBE7000F3F64E /* MDRDialController.m in Sources */,
 				D91DF2381C9ECD0D00312331 /* MDRSettingBaseController.m in Sources */,
 				D93377551C9DDED400F3F64E /* MDRPlayController.m in Sources */,

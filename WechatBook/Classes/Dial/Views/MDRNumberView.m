@@ -9,32 +9,6 @@
 #import "MDRNumberView.h"
 #import "MDRNumberButton.h"
 
-//#pragma mark - 定义拨号按钮的类型
-//typedef enum {
-//    
-//    kNumberButtonTypeNumber,    // 号码
-//    kNumberButtonTypeMi,        // * 键
-//    kNumberButtonTypeJing,      // # 键
-//    kNumberButtonTypeAdd,       // 加号键
-//    kNumberButtonTypeDelete,    // 删除键
-//    kNumberButtonTypePhoneCall  // 拨号键
-//    
-//
-//} kNumberButtonType;
-//
-//@interface MDRNumberButton : UIButton
-//
-///** 按键类型 */
-//@property (nonatomic, assign) kNumberButtonType type;
-//
-//@end
-//
-//@implementation MDRNumberButton
-//
-//
-//
-//@end
-
 
 @interface MDRNumberView ()
 
@@ -44,6 +18,8 @@
 
 @property (nonatomic, strong) NSArray *addDeleteImgArr;
 
+// 添加和删除按钮
+@property (nonatomic, strong) NSArray *addDeleteBtnArr;
 
 @end
 
@@ -61,6 +37,8 @@
             // 1.创建按钮
             MDRNumberButton *btn = [[[NSBundle mainBundle] loadNibNamed:@"MDRNumberButton" owner:nil options:nil] lastObject];
             
+            btn.type = kNumberButtonTypeNumber;
+            
             // 2.设置按钮内容
             btn.item = self.contentsArr[i];
             
@@ -72,37 +50,110 @@
 #pragma mark - * # 2个按钮
         for (int i = 0; i < 2; i++) {
             
-            UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+            MDRNumberButton *btn = [MDRNumberButton buttonWithType:UIButtonTypeCustom];
             
             [btn setImage:self.imgsArr[i] forState:UIControlStateNormal];
+            
+            if (i == 0) {
+                
+                btn.type = kNumberButtonTypeMi;
+            } else {
+            
+                btn.type = kNumberButtonTypeJing;
+            }
             
             [self addSubview:btn];
         }
         
         
 #pragma mark - 加号，delete按钮
+        NSMutableArray *temp = [NSMutableArray array];
         for (int i = 0; i < 2; i++) {
             
-            UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+            MDRNumberButton *btn = [MDRNumberButton buttonWithType:UIButtonTypeCustom];
             
             // +、delete 默认是隐藏的
             btn.hidden = YES;
+            
+            if (i == 0) {
+                btn.type = kNumberButtonTypeAdd;
+            } else {
+                btn.type = kNumberButtonTypeDelete;
+            }
             
             
             [btn setImage:self.addDeleteImgArr[i] forState:UIControlStateNormal];
             
             [self addSubview:btn];
+            [temp addObject:btn];
         }
+        self.addDeleteBtnArr = temp;
         
         
 #pragma mark - 拨号按钮
         UIButton *callBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [callBtn setImage:[UIImage imageNamed:@"icon_voip_free_call"] forState:UIControlStateNormal];
-        [callBtn setImage:[UIImage imageNamed:@"icon_voip_free_call_pressed"] forState:UIControlStateHighlighted];
+        [callBtn setImage:[UIImage imageNamed:@"icon_voip_free_call_press"] forState:UIControlStateHighlighted];
         [self addSubview:callBtn];
+        
+        
+#pragma mark - 遍历所有按钮，设置图片和监听事件
+        UIImage *bgImg = [MDRTool imageWithColor:MDRRGBColor(210, 210, 210)];
+        
+        [self.subviews enumerateObjectsUsingBlock:^(__kindof MDRNumberButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            
+            if (![obj isKindOfClass:[MDRNumberButton class]] || obj.type == kNumberButtonTypeAdd || obj.type == kNumberButtonTypeDelete) {
+                return ;
+            }
+            obj.layer.cornerRadius = 40;
+            obj.layer.masksToBounds = YES;
+            
+            [obj setBackgroundImage:bgImg forState:UIControlStateHighlighted];
+            
+            [obj addTarget:self action:@selector(numberBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+            
+        }];
     }
     return self;
 }
+
+#pragma mark - 点击按钮调用
+- (void)numberBtnClick:(MDRNumberButton *)numberBtn {
+    
+    [self.addDeleteBtnArr makeObjectsPerformSelector:@selector(setHidden:) withObject:(id)NO];
+    
+    
+    if (![numberBtn isKindOfClass:[MDRNumberButton class]]) {
+        
+        MDRLog(@"拨号键");
+        
+        return;
+    }
+    
+    switch (numberBtn.type) {
+            
+        case kNumberButtonTypeNumber:
+            MDRLog(@"号码键");
+            break;
+        case kNumberButtonTypeMi:
+            MDRLog(@"*键");
+            break;
+        case kNumberButtonTypeJing:
+            MDRLog(@"#键");
+            break;
+        case kNumberButtonTypeAdd:
+            MDRLog(@"添加键");
+            break;
+        case kNumberButtonTypeDelete:
+            MDRLog(@"删除键");
+            break;
+            
+        default:
+            break;
+    }
+
+}
+
 
 #pragma mark - 布局按钮
 - (void)layoutSubviews {
