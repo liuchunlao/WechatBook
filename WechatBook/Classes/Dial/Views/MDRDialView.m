@@ -41,14 +41,9 @@
 
     [super layoutSubviews];
     
-    
     CGFloat height = [self.numberView numberHeight];
     
-    MDRLog(@"%@", @(height));
-    
     self.numberView.frame = CGRectMake(0, self.height - height - 49, self.width, height);
-    
-    MDRLog(@"%@", self.numberView);
 }
 
 

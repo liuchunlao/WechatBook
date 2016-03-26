@@ -18,6 +18,9 @@
 
 @property (nonatomic, strong) NSArray *addDeleteImgArr;
 
+// 号码字符串
+@property (nonatomic, copy) NSMutableString *numberStr;
+
 // 添加和删除按钮
 @property (nonatomic, strong) NSArray *addDeleteBtnArr;
 
@@ -102,6 +105,10 @@
         
         [self.subviews enumerateObjectsUsingBlock:^(__kindof MDRNumberButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             
+            // 1.监听事件
+            [obj addTarget:self action:@selector(numberBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+            
+            // 2.拨号及添加删除按钮不需要设置图片，直接返回
             if (![obj isKindOfClass:[MDRNumberButton class]] || obj.type == kNumberButtonTypeAdd || obj.type == kNumberButtonTypeDelete) {
                 return ;
             }
@@ -110,7 +117,6 @@
             
             [obj setBackgroundImage:bgImg forState:UIControlStateHighlighted];
             
-            [obj addTarget:self action:@selector(numberBtnClick:) forControlEvents:UIControlEventTouchUpInside];
             
         }];
     }
@@ -126,6 +132,7 @@
     if (![numberBtn isKindOfClass:[MDRNumberButton class]]) {
         
         MDRLog(@"拨号键");
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", self.numberStr] ]];
         
         return;
     }
@@ -133,24 +140,60 @@
     switch (numberBtn.type) {
             
         case kNumberButtonTypeNumber:
+            
             MDRLog(@"号码键");
+            [self append:numberBtn.item[@"title"]];
             break;
         case kNumberButtonTypeMi:
+            
             MDRLog(@"*键");
+            [self append:@"*"];
             break;
         case kNumberButtonTypeJing:
+            
             MDRLog(@"#键");
+            [self append:@"#"];
             break;
         case kNumberButtonTypeAdd:
-            MDRLog(@"添加键");
+            
+            MDRLog(@"添加键--> 提示保存联系人");
+            
             break;
         case kNumberButtonTypeDelete:
-            MDRLog(@"删除键");
+            
+            MDRLog(@"删除键--> 清除字符串");
+            [self deleteStr];
             break;
             
         default:
             break;
     }
+
+}
+
+- (void)append:(NSString *)str {
+    
+    [self.numberStr appendFormat:@"%@", str];
+    
+    MDRLog(@"%@", self.numberStr);
+}
+
+- (void)deleteStr {
+    
+    if (self.numberStr.length > 0) {
+    
+        [self.numberStr deleteCharactersInRange:NSMakeRange(self.numberStr.length - 1, 1)];
+    }
+    
+    if (self.numberStr.length == 0) {
+        [self.addDeleteBtnArr enumerateObjectsUsingBlock:^(UIButton *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            
+            obj.hidden = YES;
+        }];
+    }
+    
+    
+    MDRLog(@"%@", self.numberStr);
 
 }
 
@@ -316,6 +359,15 @@
     return _addDeleteImgArr;
     
     
+}
+
+- (NSMutableString *)numberStr {
+
+    if (_numberStr == nil) {
+        _numberStr = [NSMutableString string];
+
+    }
+    return _numberStr;
 }
 
 @end
