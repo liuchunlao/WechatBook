@@ -175,29 +175,40 @@
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
-//        CNMutableContact *mutableCt = [CNMutableContact all
+        // 1.拷贝一个可变的联系人模型
+        CNMutableContact *mutableCt = contact.mutableCopy;
         
-        CNContactViewController *vc = [CNContactViewController viewControllerForContact:contact];
+        // 2.添加电话信息
+        CNPhoneNumber *number = [CNPhoneNumber phoneNumberWithStringValue:_phoneNumber];
+        CNLabeledValue *value = [CNLabeledValue labeledValueWithLabel:@"主要" value:number];
         
-        vc.allowsEditing = YES;
-        vc.shouldShowLinkedContacts = YES;
+        // 2.2交给可变联系人模型
+        mutableCt.phoneNumbers = [contact.phoneNumbers arrayByAddingObject:value];
+        
+        // 3.创建保存请求
+        CNSaveRequest *request = [[CNSaveRequest alloc] init];
+        // 3.2请求更新联系人
+        [request updateContact:mutableCt];
+        
+        // 4.获取通讯录
+        CNContactStore *store = [[CNContactStore alloc] init];
+        // 4.2 执行保存请求
+        [store executeSaveRequest:request error:nil];
+        
+        // 5.创建显示联系人的控制器
+        CNContactViewController *vc = [CNContactViewController viewControllerForNewContact:mutableCt];
         vc.navigationItem.title = @"添加到已有";
+        vc.delegate = self;
         
+        // 5.2 包成导航控制器
         MDRNavigationController *nav = [[MDRNavigationController alloc] initWithRootViewController:vc];
         
+        // 6.显示添加到已有联系人的界面
         [self presentViewController:nav animated:YES completion:nil];
-        
         
     });
     
 }
-
-- (void)contactPickerDidCancel:(CNContactPickerViewController *)picker {
-
-    MDRLog(@"点击了取消按钮");
-    
-}
-
 
 #pragma mark - 跳转到黄页控制器
 - (void)yellowBtnClick {
