@@ -58,6 +58,8 @@
 				<string>UIImageView</string>
 				<key>MDRAccessoryName</key>
 				<string>icon_fakeDisclosure</string>
+				<key>MDRTargetVc</key>
+				<string>MDRYellowPageController</string>
 			</dict>
 		</array>
 	</dict>

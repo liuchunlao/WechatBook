@@ -7,6 +7,7 @@
 //
 
 #import "MDRDialController.h"
+#import "MDRYellowPageController.h"
 #import "MDRDialView.h"
 
 @interface MDRYellowButton : UIButton
@@ -48,7 +49,20 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    MDRLog(@"%@", self.view);
+    MDRDialView *dialView = (MDRDialView *)self.view;
+    
+    
+    typeof (self) weakSelf = self;
+    dialView.hideNavBar = ^(BOOL isContain) {
+    
+        if (isContain) {
+            [weakSelf.navigationController.navigationBar setHidden:YES];
+        } else {
+        
+            [weakSelf.navigationController.navigationBar setHidden:NO];
+        }
+        
+    };
     
 #pragma mark - 黄页按钮
     
@@ -80,8 +94,8 @@
 #pragma mark - 跳转到黄页控制器
 - (void)yellowBtnClick {
 
-    MDRLog(@"跳转到黄页控制器");
-    
+    MDRYellowPageController *yellowPageVc = [[MDRYellowPageController alloc] init];
+    [self.navigationController pushViewController:yellowPageVc animated:YES];
 }
 
 
@@ -109,8 +123,6 @@
     [self.tabBarController.tabBar setBarStyle:UIBarStyleDefault];
 
 }
-
-
 
 
 @end

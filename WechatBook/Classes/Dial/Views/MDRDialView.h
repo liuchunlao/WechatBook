@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^DialNeedsHideNavBar)(BOOL);
+
 @interface MDRDialView : UIView
+
+@property (nonatomic, copy) DialNeedsHideNavBar hideNavBar;
 
 @end

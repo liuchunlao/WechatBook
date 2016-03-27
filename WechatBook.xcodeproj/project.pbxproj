@@ -36,6 +36,7 @@
 		D961EF751CA2FBD50095766A /* MDRNumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D961EF741CA2FBD50095766A /* MDRNumberButton.m */; };
 		D961EF771CA2FBF60095766A /* MDRNumberButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D961EF761CA2FBF60095766A /* MDRNumberButton.xib */; };
 		D9813EE21CA6EC3E0013AE57 /* MDRTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D9813EE11CA6EC3E0013AE57 /* MDRTool.m */; };
+		D9E20B151CA787BF00B3F7AF /* MDRYellowPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E20B141CA787BF00B3F7AF /* MDRYellowPageController.m */; };
 		D9E76CD71CA13FC1008CA2E4 /* MDRAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E76CD61CA13FC1008CA2E4 /* MDRAboutController.m */; };
 		D9E76CD91CA1401A008CA2E4 /* MDRSettingAbout.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9E76CD81CA1401A008CA2E4 /* MDRSettingAbout.plist */; };
 		D9E76CDC1CA14114008CA2E4 /* MDRAboutHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E76CDB1CA14114008CA2E4 /* MDRAboutHeaderView.m */; };
@@ -95,6 +96,8 @@
 		D961EF761CA2FBF60095766A /* MDRNumberButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDRNumberButton.xib; sourceTree = "<group>"; };
 		D9813EE01CA6EC3E0013AE57 /* MDRTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRTool.h; sourceTree = "<group>"; };
 		D9813EE11CA6EC3E0013AE57 /* MDRTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRTool.m; sourceTree = "<group>"; };
+		D9E20B131CA787BF00B3F7AF /* MDRYellowPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRYellowPageController.h; sourceTree = "<group>"; };
+		D9E20B141CA787BF00B3F7AF /* MDRYellowPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRYellowPageController.m; sourceTree = "<group>"; };
 		D9E76CD51CA13FC1008CA2E4 /* MDRAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRAboutController.h; sourceTree = "<group>"; };
 		D9E76CD61CA13FC1008CA2E4 /* MDRAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRAboutController.m; sourceTree = "<group>"; };
 		D9E76CD81CA1401A008CA2E4 /* MDRSettingAbout.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MDRSettingAbout.plist; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 				D91DF2421C9EDB2700312331 /* MDRAccountInfoController.m */,
 				D9E76CD51CA13FC1008CA2E4 /* MDRAboutController.h */,
 				D9E76CD61CA13FC1008CA2E4 /* MDRAboutController.m */,
+				D9E20B131CA787BF00B3F7AF /* MDRYellowPageController.h */,
+				D9E20B141CA787BF00B3F7AF /* MDRYellowPageController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -657,6 +662,7 @@
 				D93377381C9DBCAF00F3F64E /* MDRNavigationController.m in Sources */,
 				D92B1B1E1CA1831D00470594 /* MDRSettingBaseCell.m in Sources */,
 				D9E76CDC1CA14114008CA2E4 /* MDRAboutHeaderView.m in Sources */,
+				D9E20B151CA787BF00B3F7AF /* MDRYellowPageController.m in Sources */,
 				D91DF2431C9EDB2700312331 /* MDRAccountInfoController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

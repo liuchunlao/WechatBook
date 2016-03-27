@@ -8,8 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@class MDRNumberView;
+@protocol MDRNumberViewDelegate <NSObject>
+
+@optional
+- (void)numberView:(MDRNumberView *)numberView wantToCallNumber:(NSString *)numberStr;
+
+@end
+
+
 @interface MDRNumberView : UIView
 
 - (CGFloat)numberHeight;
+
+@property (nonatomic, weak) id<MDRNumberViewDelegate> delegate;
+
 
 @end

@@ -176,6 +176,10 @@
     [self.numberStr appendFormat:@"%@", str];
     
     MDRLog(@"%@", self.numberStr);
+    
+    if ([self.delegate respondsToSelector:@selector(numberView:wantToCallNumber:)]) {
+        [self.delegate numberView:self wantToCallNumber:self.numberStr];
+    }
 }
 
 - (void)deleteStr {
@@ -192,6 +196,9 @@
         }];
     }
     
+    if ([self.delegate respondsToSelector:@selector(numberView:wantToCallNumber:)]) {
+        [self.delegate numberView:self wantToCallNumber:self.numberStr];
+    }
     
     MDRLog(@"%@", self.numberStr);
 
