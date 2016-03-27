@@ -81,7 +81,84 @@
     [yellowBtn addTarget:self action:@selector(yellowBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     
-    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+    
+
+    typeof (self) weakSelf = self;
+    // 隐藏导航条的回调
+    dialView.hideNavBar = ^(BOOL isContain) {
+    
+        if (isContain) {
+            [weakSelf.navigationController.navigationBar setHidden:YES];
+        } else {
+        
+            [weakSelf.navigationController.navigationBar setHidden:NO];
+        }
+        
+    };
+    
+    // 提示添加联系人的回调
+    dialView.addContact = ^(NSString *phoneNumber) {
+    
+        // MARK: - 弹窗
+        UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        UIAlertAction *create = [UIAlertAction actionWithTitle:@"新建联系人" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+            MDRLog(@"添加联系人");
+            // 0.联系人
+            CNMutableContact *ct = [[CNMutableContact alloc] init];
+            
+            // MARK: - 设置新建联系人的电话
+            CNPhoneNumber *phoneNum = [CNPhoneNumber phoneNumberWithStringValue:phoneNumber];
+            CNLabeledValue *lableValue = [CNLabeledValue labeledValueWithLabel:@"手机" value:phoneNum];
+            
+            ct.phoneNumbers = @[lableValue];
+            
+            // 1.创建控制器
+            CNContactViewController *addContactVc = [CNContactViewController viewControllerForNewContact:ct];
+            
+            NSLog(@"%@", addContactVc.displayedPropertyKeys);
+            
+            // 1.2 设置代理
+            addContactVc.delegate = self;
+            
+            // 1.3 设置标题
+            addContactVc.navigationItem.title = @"新建联系人";
+            
+            // 2.包成导航控制器
+            MDRNavigationController *nav = [[MDRNavigationController alloc] initWithRootViewController:addContactVc];
+            
+            // 3.显示控制器
+            [self presentViewController:nav animated:YES completion:nil];
+        
+        }];
+        
+        UIAlertAction *addToOld = [UIAlertAction actionWithTitle:@"添加到现有联系人" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+            // 1.创建picker
+            CNContactPickerViewController *pickerVc = [[CNContactPickerViewController alloc] init];
+            
+            pickerVc.delegate = self;
+            
+            _phoneNumber = phoneNumber;
+            
+            // 2.显示
+            [self presentViewController:pickerVc animated:YES completion:nil];
+            
+            
+        }];
+        
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        
+        [alertVc addAction:create];
+        [alertVc addAction:addToOld];
+        [alertVc addAction:cancel];
+        
+        [self presentViewController:alertVc animated:YES completion:nil];
+        
+    
+    };
+    
 }
 
 #pragma mark - CNContactViewControllerDelegate
