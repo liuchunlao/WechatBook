@@ -13,6 +13,9 @@
 
 @optional
 - (void)numberView:(MDRNumberView *)numberView wantToCallNumber:(NSString *)numberStr;
+- (void)numberView:(MDRNumberView *)numberView wantToSaveNumber:(NSString *)numberStr;
+
+
 
 @end
 

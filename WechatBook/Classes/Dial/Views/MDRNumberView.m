@@ -157,6 +157,9 @@
         case kNumberButtonTypeAdd:
             
             MDRLog(@"添加键--> 提示保存联系人");
+            if ([self.delegate respondsToSelector:@selector(numberView:wantToSaveNumber:)]) {
+                [self.delegate numberView:self wantToSaveNumber:self.numberStr];
+            }
             
             break;
         case kNumberButtonTypeDelete:

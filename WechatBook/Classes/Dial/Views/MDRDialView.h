@@ -10,8 +10,14 @@
 
 typedef void(^DialNeedsHideNavBar)(BOOL);
 
+typedef void(^DialWantAddContact)(NSString *);
+
 @interface MDRDialView : UIView
 
+// 隐藏导航栏
 @property (nonatomic, copy) DialNeedsHideNavBar hideNavBar;
+
+// 添加联系人
+@property (nonatomic, copy) DialWantAddContact addContact;
 
 @end

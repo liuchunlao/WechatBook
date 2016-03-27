@@ -50,6 +50,7 @@
 
 
 #pragma mark - MDRNumberViewDelegate
+// 显示要呼叫的号码
 - (void)numberView:(MDRNumberView *)numberView wantToCallNumber:(NSString *)numberStr {
 
     self.numberLbl.text = numberStr;
@@ -67,6 +68,15 @@
     if (self.hideNavBar) {
         self.hideNavBar(isContain);
     }
+}
+
+// 想要保存号码
+- (void)numberView:(MDRNumberView *)numberView wantToSaveNumber:(NSString *)numberStr {
+    
+    if (self.addContact) {
+        self.addContact(numberStr);
+    }
+
 }
 
 

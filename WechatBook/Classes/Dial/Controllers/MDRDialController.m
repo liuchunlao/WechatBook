@@ -9,6 +9,7 @@
 #import "MDRDialController.h"
 #import "MDRYellowPageController.h"
 #import "MDRDialView.h"
+#import "MDRNavigationController.h"
 
 @interface MDRYellowButton : UIButton
 
@@ -29,7 +30,9 @@
 @end
 
 
-@interface MDRDialController ()
+@interface MDRDialController () <CNContactViewControllerDelegate, CNContactPickerDelegate> {
+    NSString *_phoneNumber;
+}
 
 @end
 
@@ -48,24 +51,17 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
+
+    // MARK: - 导航栏背景透明
+    // 设置一个没有内容的图片即可
+    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    
+    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
     
     MDRDialView *dialView = (MDRDialView *)self.view;
     
     
-    typeof (self) weakSelf = self;
-    dialView.hideNavBar = ^(BOOL isContain) {
-    
-        if (isContain) {
-            [weakSelf.navigationController.navigationBar setHidden:YES];
-        } else {
-        
-            [weakSelf.navigationController.navigationBar setHidden:NO];
-        }
-        
-    };
-    
-#pragma mark - 黄页按钮
-    
+    // MARK: - 黄页按钮
     // 1.按钮
     MDRYellowButton *yellowBtn = [MDRYellowButton buttonWithType:UIButtonTypeCustom];
     
@@ -84,12 +80,47 @@
     // 4.注册事件
     [yellowBtn addTarget:self action:@selector(yellowBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
-#pragma mark - 导航栏背景透明
-    // 设置一个没有内容的图片即可
-    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
     
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
 }
+
+#pragma mark - CNContactViewControllerDelegate
+- (void)contactViewController:(CNContactViewController *)viewController didCompleteWithContact:(nullable CNContact *)contact {
+    
+    // 销毁控制器
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - CNContactPickerViewControllerDelegate
+- (void)contactPicker:(CNContactPickerViewController *)picker didSelectContact:(CNContact *)contact {
+
+    MDRLog(@"选中某个联系人后，会自己dismiss掉  %@", contact.familyName);
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+//        CNMutableContact *mutableCt = [CNMutableContact all
+        
+        CNContactViewController *vc = [CNContactViewController viewControllerForContact:contact];
+        
+        vc.allowsEditing = YES;
+        vc.shouldShowLinkedContacts = YES;
+        vc.navigationItem.title = @"添加到已有";
+        
+        MDRNavigationController *nav = [[MDRNavigationController alloc] initWithRootViewController:vc];
+        
+        [self presentViewController:nav animated:YES completion:nil];
+        
+        
+    });
+    
+}
+
+- (void)contactPickerDidCancel:(CNContactPickerViewController *)picker {
+
+    MDRLog(@"点击了取消按钮");
+    
+}
+
 
 #pragma mark - 跳转到黄页控制器
 - (void)yellowBtnClick {
