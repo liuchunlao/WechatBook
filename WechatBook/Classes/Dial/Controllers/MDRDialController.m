@@ -161,6 +161,15 @@
     
 }
 
+#pragma mark - 跳转到黄页控制器
+- (void)yellowBtnClick {
+    
+    MDRYellowPageController *yellowPageVc = [[MDRYellowPageController alloc] init];
+    
+    [self.navigationController pushViewController:yellowPageVc animated:YES];
+}
+
+
 #pragma mark - CNContactViewControllerDelegate
 - (void)contactViewController:(CNContactViewController *)viewController didCompleteWithContact:(nullable CNContact *)contact {
     
@@ -210,12 +219,6 @@
     
 }
 
-#pragma mark - 跳转到黄页控制器
-- (void)yellowBtnClick {
-
-    MDRYellowPageController *yellowPageVc = [[MDRYellowPageController alloc] init];
-    [self.navigationController pushViewController:yellowPageVc animated:YES];
-}
 
 
 #pragma mark - 实现选中拨号的时候底部的工具条是看不见线条
