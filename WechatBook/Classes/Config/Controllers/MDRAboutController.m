@@ -31,4 +31,10 @@
     
 }
 
+// 防止第一行cell被覆盖一部分内容
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+
+    return 20;
+}
+
 @end
