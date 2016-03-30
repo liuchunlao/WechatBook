@@ -120,6 +120,8 @@
 				<string>icon_fakeDisclosure</string>
 				<key>MDRTargetVc</key>
 				<string>MDRWebController</string>
+				<key>MDRUrl</key>
+				<string></string>
 			</dict>
 			<dict>
 				<key>MDRIcon</key>

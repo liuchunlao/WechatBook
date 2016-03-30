@@ -16,6 +16,8 @@
 				<string>UIImageView</string>
 				<key>MDRAccessoryName</key>
 				<string>icon_fakeDisclosure</string>
+				<key>MDRTargetVc</key>
+				<string>MDRDistanceAnalyzeController</string>
 			</dict>
 			<dict>
 				<key>MDRTitle</key>
@@ -24,6 +26,8 @@
 				<string>UIImageView</string>
 				<key>MDRAccessoryName</key>
 				<string>icon_fakeDisclosure</string>
+				<key>MDRTargetVc</key>
+				<string>MDRPlayBookController</string>
 			</dict>
 			<dict>
 				<key>MDRTitle</key>
@@ -40,6 +44,8 @@
 				<string>UIImageView</string>
 				<key>MDRAccessoryName</key>
 				<string>icon_fakeDisclosure</string>
+				<key>MDRTargetVc</key>
+				<string>MDRAgreementController</string>
 			</dict>
 		</array>
 	</dict>

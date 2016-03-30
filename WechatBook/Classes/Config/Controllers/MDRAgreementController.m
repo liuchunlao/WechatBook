@@ -1,21 +1,21 @@
 //
-//  MDRWebController.m
+//  MDRAgreementController.m
 //  WechatBook
 //
 //  Created by 刘春牢 on 16/3/30.
 //  Copyright © 2016年 liuchunlao. All rights reserved.
 //
 
-#import "MDRWebController.h"
+#import "MDRAgreementController.h"
 
-@interface MDRWebController ()
+@interface MDRAgreementController ()
 
 @end
 
-@implementation MDRWebController
+@implementation MDRAgreementController
 
 - (void)loadView {
-
+    
     self.view = [[UIWebView alloc] initWithFrame:[UIScreen mainScreen].bounds];
 }
 
@@ -24,12 +24,12 @@
     
     UIWebView *webView = (UIWebView *)self.view;
     
-    // 免费通话献爱心的链接
-    NSURL *url = [NSURL URLWithString:@"http://dianhua.qq.com/v2/commonweal/main?uuid=553254713&auth=eiXchoouJlj%2Bwxgr6esXUJcJyv%2FOV664Uqa%2BfuLE0Gk%3D&devid=05B05C7CCAA0473180EE6A80BB1A57A9"];
+    // 婉转电话本的链接
+    NSURL *url = [NSURL URLWithString:@"http://dianhua.qq.com/cgi-bin/readtemplate?t=dianhua_agreement_default"];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
-   
+    
     [webView loadRequest:request];
     
 }

@@ -1,21 +1,21 @@
 //
-//  MDRWebController.m
+//  MDRDistanceAnalyzeController.m
 //  WechatBook
 //
 //  Created by 刘春牢 on 16/3/30.
 //  Copyright © 2016年 liuchunlao. All rights reserved.
 //
 
-#import "MDRWebController.h"
+#import "MDRDistanceAnalyzeController.h"
 
-@interface MDRWebController ()
+@interface MDRDistanceAnalyzeController ()
 
 @end
 
-@implementation MDRWebController
+@implementation MDRDistanceAnalyzeController
 
 - (void)loadView {
-
+    
     self.view = [[UIWebView alloc] initWithFrame:[UIScreen mainScreen].bounds];
 }
 
@@ -24,15 +24,16 @@
     
     UIWebView *webView = (UIWebView *)self.view;
     
-    // 免费通话献爱心的链接
-    NSURL *url = [NSURL URLWithString:@"http://dianhua.qq.com/v2/commonweal/main?uuid=553254713&auth=eiXchoouJlj%2Bwxgr6esXUJcJyv%2FOV664Uqa%2BfuLE0Gk%3D&devid=05B05C7CCAA0473180EE6A80BB1A57A9"];
+    // 婉转电话本的链接
+    NSURL *url = [NSURL URLWithString:@"http://dianhua.qq.com/cgi-bin/cloudgrptemplate?t=dianhuaben_calldetail_analysis&r=gMOoiHPNiF%2FgxPNFfNY5wcYu4lDv59hpqj2wKJ6K0ldrhnf0fOGEKvDmoi0vEqngCHKpD4RHx0ZW1KSbvbCWwZSxaauTdS%2BgUDD0OAVTqfYNUvg1PlswiHA8rD%2B%2BseM2i2gAXrta25%2BGHe9hk%2Bh4PLkAoSTnMxHreKQTrs%2BKLCbQeOBRYBPCpEGkOjEANnRG7oxDSPV0UMg%3D"];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
-   
+    
     [webView loadRequest:request];
     
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
