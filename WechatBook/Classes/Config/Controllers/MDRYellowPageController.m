@@ -30,17 +30,6 @@
     
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-
-    [super viewWillDisappear:animated];
-    
-    // 隐藏导航栏的背景
-    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-    
-    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
-    
-}
-
 
 /*
 #pragma mark - Navigation

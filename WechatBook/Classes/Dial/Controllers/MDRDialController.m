@@ -161,6 +161,31 @@
     
 }
 
+#pragma mark - 实现选中拨号的时候底部的工具条是看不见线条
+- (void)viewWillAppear:(BOOL)animated {
+
+    [super viewWillAppear:animated];
+    
+    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+    
+    // 1.让底部的工具条跟barTintColor与控制器背景一致
+    [self.tabBarController.tabBar setBarTintColor:self.view.backgroundColor];
+    // 2.修改样式
+    [self.tabBarController.tabBar setBarStyle:UIBarStyleBlackOpaque];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    [super viewWillDisappear:animated];
+    
+    // 1.将tintColor改回去
+    [self.tabBarController.tabBar setBarTintColor:nil];
+    // 2.改为默认样式
+    [self.tabBarController.tabBar setBarStyle:UIBarStyleDefault];
+    
+}
+
 #pragma mark - 跳转到黄页控制器
 - (void)yellowBtnClick {
     
@@ -221,30 +246,7 @@
 
 
 
-#pragma mark - 实现选中拨号的时候底部的工具条是看不见线条
-// 并且工具条背景跟控制器背景一直
-- (void)viewWillAppear:(BOOL)animated {
 
-    [super viewWillAppear:animated];
-    
-    // 1.让底部的工具条跟barTintColor与控制器背景一致
-    [self.tabBarController.tabBar setBarTintColor:self.view.backgroundColor];
-    // 2.修改样式
-    [self.tabBarController.tabBar setBarStyle:UIBarStyleBlackOpaque];
-    
-
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-
-    [super viewWillDisappear:animated];
-    
-    // 1.将tintColor改回去
-    [self.tabBarController.tabBar setBarTintColor:nil];
-    // 2.改为默认样式
-    [self.tabBarController.tabBar setBarStyle:UIBarStyleDefault];
-
-}
 
 
 @end
