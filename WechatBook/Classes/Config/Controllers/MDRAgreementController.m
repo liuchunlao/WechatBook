@@ -25,7 +25,7 @@
     UIWebView *webView = (UIWebView *)self.view;
     
     // 婉转电话本的链接
-    NSURL *url = [NSURL URLWithString:@"http://dianhua.qq.com/cgi-bin/readtemplate?t=dianhua_agreement_default"];
+    NSURL *url = [NSURL URLWithString:MDRAgreenmentDefault];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     

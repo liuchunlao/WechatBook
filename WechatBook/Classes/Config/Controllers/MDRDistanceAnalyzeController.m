@@ -25,7 +25,7 @@
     UIWebView *webView = (UIWebView *)self.view;
     
     // 婉转电话本的链接
-    NSURL *url = [NSURL URLWithString:@"http://dianhua.qq.com/cgi-bin/cloudgrptemplate?t=dianhuaben_calldetail_analysis&r=gMOoiHPNiF%2FgxPNFfNY5wcYu4lDv59hpqj2wKJ6K0ldrhnf0fOGEKvDmoi0vEqngCHKpD4RHx0ZW1KSbvbCWwZSxaauTdS%2BgUDD0OAVTqfYNUvg1PlswiHA8rD%2B%2BseM2i2gAXrta25%2BGHe9hk%2Bh4PLkAoSTnMxHreKQTrs%2BKLCbQeOBRYBPCpEGkOjEANnRG7oxDSPV0UMg%3D"];
+    NSURL *url = [NSURL URLWithString:MDRDistanceAnalyze];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     

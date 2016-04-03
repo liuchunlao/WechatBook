@@ -24,7 +24,7 @@
     UIWebView *webView = (UIWebView *)self.view;
     
     // 婉转电话本的链接
-    NSURL *url = [NSURL URLWithString:@"http://dianhua.qq.com/v2/weixin_notice?lang=zh_CN&t=weixin_notices&platform=ios&new=0&expand=0&version=2_2_4"];
+    NSURL *url = [NSURL URLWithString:MDRPlayBook];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     

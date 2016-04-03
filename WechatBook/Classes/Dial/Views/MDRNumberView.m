@@ -242,7 +242,6 @@
             obj.width = width;
             obj.height = height;
             
-            MDRLog(@"%@", NSStringFromCGRect(obj.frame));
             
         } else if (idx < 12) {
             

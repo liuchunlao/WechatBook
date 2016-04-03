@@ -25,6 +25,21 @@
 #define MDRRGBAColor(R, G, B, A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
 
 
+// MARK: - 链接
+
+// 免费通话送爱心
+#define MDRGongYi @"http://dianhua.qq.com/v2/commonweal/main?uuid=553254713&auth=Gw42Bd4Rww%2B%2FoSwJy40VUp8FnjXUDIFK9yYeqyFOj5s%3D&devid=05B05C7CCAA0473180EE6A80BB1A57A9"
+
+
+// 通话距离分析
+#define MDRDistanceAnalyze @"http://dianhua.qq.com/cgi-bin/cloudgrptemplate?t=dianhuaben_calldetail_analysis&r=gMOoiHPNiF%2FgxPNFfNY5wcYu4lDv59hpqj2wKJ6K0ldrhnf0fOGEKvDmoi0vEqngCHKpD4RHx0ZW1KSbvbCWwZSxaauTdS%2BgUDD0OAVTqfYNUvg1PlswiHA8rD%2B%2BseM2i2gAXrta25%2BGHe9hk%2Bh4PLkAoSTnMxHreKQTrs%2BKLCbQeOBRYBPCpEGkOjEANnRG7oxDSPV0UMg%3D"
+
+// 玩转电话本
+#define MDRPlayBook @"http://dianhua.qq.com/v2/weixin_notice?lang=zh_CN&t=weixin_notices&platform=ios&new=0&expand=0&version=2_2_4"
+
+// 用户协议
+#define MDRAgreenmentDefault @"http://dianhua.qq.com/cgi-bin/readtemplate?t=dianhua_agreement_default"
+
 
 #ifdef DEBUG
 

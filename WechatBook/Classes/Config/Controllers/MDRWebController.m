@@ -25,7 +25,7 @@
     UIWebView *webView = (UIWebView *)self.view;
     
     // 免费通话献爱心的链接
-    NSURL *url = [NSURL URLWithString:@"http://dianhua.qq.com/v2/commonweal/main?uuid=553254713&auth=eiXchoouJlj%2Bwxgr6esXUJcJyv%2FOV664Uqa%2BfuLE0Gk%3D&devid=05B05C7CCAA0473180EE6A80BB1A57A9"];
+    NSURL *url = [NSURL URLWithString:MDRGongYi];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
