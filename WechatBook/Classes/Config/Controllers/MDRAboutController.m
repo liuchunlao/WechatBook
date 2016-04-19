@@ -26,7 +26,12 @@
     self.tableView.tableFooterView = footerView;
     
     // 3.此页面不能滚动
-    self.tableView.scrollEnabled = NO;
+    if (MDRScreenH > 480) {
+        self.tableView.scrollEnabled = NO;
+    } else {
+    
+        self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
+    }
     
     
 }

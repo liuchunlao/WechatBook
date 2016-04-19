@@ -24,6 +24,8 @@
 
 #define MDRRGBAColor(R, G, B, A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
 
+#define MDRScreenH [UIScreen mainScreen].bounds.size.height
+#define MDRScreenW [UIScreen mainScreen].bounds.size.width
 
 // MARK: - 链接
 
