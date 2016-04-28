@@ -41,6 +41,7 @@
 		D961EF771CA2FBF60095766A /* MDRNumberButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D961EF761CA2FBF60095766A /* MDRNumberButton.xib */; };
 		D9813EE21CA6EC3E0013AE57 /* MDRTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D9813EE11CA6EC3E0013AE57 /* MDRTool.m */; };
 		D9E20B151CA787BF00B3F7AF /* MDRYellowPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E20B141CA787BF00B3F7AF /* MDRYellowPageController.m */; };
+		D9E6BEE31CD23F2300DE05C9 /* MDRShowImgView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E6BEE21CD23F2300DE05C9 /* MDRShowImgView.m */; };
 		D9E76CD71CA13FC1008CA2E4 /* MDRAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E76CD61CA13FC1008CA2E4 /* MDRAboutController.m */; };
 		D9E76CD91CA1401A008CA2E4 /* MDRSettingAbout.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9E76CD81CA1401A008CA2E4 /* MDRSettingAbout.plist */; };
 		D9E76CDC1CA14114008CA2E4 /* MDRAboutHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E76CDB1CA14114008CA2E4 /* MDRAboutHeaderView.m */; };
@@ -110,6 +111,8 @@
 		D9813EE11CA6EC3E0013AE57 /* MDRTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRTool.m; sourceTree = "<group>"; };
 		D9E20B131CA787BF00B3F7AF /* MDRYellowPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRYellowPageController.h; sourceTree = "<group>"; };
 		D9E20B141CA787BF00B3F7AF /* MDRYellowPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRYellowPageController.m; sourceTree = "<group>"; };
+		D9E6BEE11CD23F2300DE05C9 /* MDRShowImgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRShowImgView.h; sourceTree = "<group>"; };
+		D9E6BEE21CD23F2300DE05C9 /* MDRShowImgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRShowImgView.m; sourceTree = "<group>"; };
 		D9E76CD51CA13FC1008CA2E4 /* MDRAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDRAboutController.h; sourceTree = "<group>"; };
 		D9E76CD61CA13FC1008CA2E4 /* MDRAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRAboutController.m; sourceTree = "<group>"; };
 		D9E76CD81CA1401A008CA2E4 /* MDRSettingAbout.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MDRSettingAbout.plist; sourceTree = "<group>"; };
@@ -296,6 +299,8 @@
 				D9E76CDF1CA146AF008CA2E4 /* MDRAboutFooterView.xib */,
 				D92B1B1C1CA1831D00470594 /* MDRSettingBaseCell.h */,
 				D92B1B1D1CA1831D00470594 /* MDRSettingBaseCell.m */,
+				D9E6BEE11CD23F2300DE05C9 /* MDRShowImgView.h */,
+				D9E6BEE21CD23F2300DE05C9 /* MDRShowImgView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -684,6 +689,7 @@
 				D91DF23B1C9ECE1D00312331 /* MDRSettingHomeController.m in Sources */,
 				D93377521C9DDEA100F3F64E /* MDRSelectContactController.m in Sources */,
 				D93377381C9DBCAF00F3F64E /* MDRNavigationController.m in Sources */,
+				D9E6BEE31CD23F2300DE05C9 /* MDRShowImgView.m in Sources */,
 				D92B1B1E1CA1831D00470594 /* MDRSettingBaseCell.m in Sources */,
 				D9E76CDC1CA14114008CA2E4 /* MDRAboutHeaderView.m in Sources */,
 				D9E20B151CA787BF00B3F7AF /* MDRYellowPageController.m in Sources */,

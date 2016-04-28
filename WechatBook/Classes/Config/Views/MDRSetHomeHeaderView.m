@@ -7,6 +7,7 @@
 //
 
 #import "MDRSetHomeHeaderView.h"
+#import "MDRShowImgView.h"
 
 @implementation MDRSetHomeHeaderView
 
@@ -20,6 +21,8 @@
 #warning 待完善！！！
     // 将自己的图片弹窗放大显示到屏幕上！
     MDRLog(@"将图片弹窗显示到屏幕上");
+    
+    [MDRShowImgView showImageView:sender.imageView];
     
 }
 
