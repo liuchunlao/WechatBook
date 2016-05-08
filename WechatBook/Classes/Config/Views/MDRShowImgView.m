@@ -94,31 +94,6 @@ static UIImageView *_showIngImgView;
 
 }
 
-//#pragma mark - 双击放大
-//+ (void)biggerAction:(UITapGestureRecognizer *)recognizer {
-//    
-//    // 宽度
-//    CGFloat width = MDRApplication.keyWindow.bounds.size.width;
-//    CGFloat height = width;
-//    
-//    CGFloat scale = MDRApplication.keyWindow.bounds.size.height / height;
-//    
-//    
-//    CGAffineTransform form = _showIngImgView.transform;
-//    
-//    if (CGAffineTransformIsIdentity(form)) {
-//        form = CGAffineTransformScale(_showIngImgView.transform, scale, scale);
-//    } else {
-//    
-//        form = CGAffineTransformIdentity;
-//    }
-//    
-//    
-//    _showIngImgView.transform = form;
-//    
-//}
-
-
 
 
 

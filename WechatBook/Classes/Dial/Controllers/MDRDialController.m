@@ -207,8 +207,7 @@
 
     MDRLog(@"选中某个联系人后，会自己dismiss掉  %@", contact.familyName);
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
         // 1.拷贝一个可变的联系人模型
         CNMutableContact *mutableCt = contact.mutableCopy;
         
@@ -229,19 +228,22 @@
         // 4.2 执行保存请求
         [store executeSaveRequest:request error:nil];
         
-        // 5.创建显示联系人的控制器
-        CNContactViewController *vc = [CNContactViewController viewControllerForNewContact:mutableCt];
-        vc.navigationItem.title = @"添加到已有";
-        vc.delegate = self;
-        
-        // 5.2 包成导航控制器
-        MDRNavigationController *nav = [[MDRNavigationController alloc] initWithRootViewController:vc];
-        
-        // 6.显示添加到已有联系人的界面
-        [self presentViewController:nav animated:YES completion:nil];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+    
+            // 5.创建显示联系人的控制器
+            CNContactViewController *vc = [CNContactViewController viewControllerForNewContact:mutableCt];
+            vc.navigationItem.title = @"添加到已有";
+            vc.delegate = self;
+            
+            // 5.2 包成导航控制器
+            MDRNavigationController *nav = [[MDRNavigationController alloc] initWithRootViewController:vc];
+            
+            // 6.显示添加到已有联系人的界面
+            [self presentViewController:nav animated:YES completion:nil];
+        });
         
     });
-    
+
 }
 
 
